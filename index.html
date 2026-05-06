@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuickCode</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabaseClient.js" defer></script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/indexPage.js" defer></script>
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <img src="images/Logo.png" alt="Title Image">
+        <h1></h1>
+    </div>
+    <div class="auth-buttons" data-auth-links>
+        <a href="/login" class="auth-link">Login</a>
+        <a href="/register" class="auth-link">Register</a>
+    </div>
+</header>
+
+<main>
+    <div class="button-container">
+        <a href="/singleplayer" class="button-link">
+            <span>Single player</span>
+        </a>
+        <a href="/multiplayer" class="button-link">Multiplayer</a>
+    </div>
+
+    <div class="instructions">
+        <h2>Instructions</h2>
+        <p id="welcome-text">Log in om je score op te slaan en op het leaderboard te komen.</p>
+        <p>Welcome to QuickCode! In this game, you will race against time to type out code snippets as quickly and accurately as possible.</p>
+        <p>Choose between Single player mode to practice your typing skills or Multiplayer mode to compete against friends or other players online.</p>
+        <p>Good luck, and may the fastest typist win!</p>
+    </div>
+
+    <div class="scoreboard">
+        <h2>Scoreboard</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Player</th>
+                <th>Rank</th>
+                <th>Score</th>
+            </tr>
+            </thead>
+            <tbody id="scoreboard-body">
+            <tr>
+                <td colspan="3">Scoreboard laden...</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+
+<footer>
+    <div>
+        <a href="#terms">Terms of Service</a>
+        <a href="#privacy">Privacy Policy</a>
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank" rel="noreferrer"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noreferrer"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noreferrer"><i class="fab fa-instagram"></i></a>
+            <a href="https://discord.com" target="_blank" rel="noreferrer"><i class="fab fa-discord"></i></a>
+        </div>
+    </div>
+    <p>&copy; 2026 QuickCode. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
