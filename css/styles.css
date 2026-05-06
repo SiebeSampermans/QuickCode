@@ -1,0 +1,332 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #F4F4F4;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1 {
+    font-weight: 600;
+    margin: 0;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.auth-link {
+    padding: 8px 18px;
+    background: #267A3E;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.auth-link:hover {
+    background: white;
+    color: #267A3E;
+    border: 2px solid #267A3E;
+}
+
+.login-button {
+    padding: 10px 20px;
+    background: #fff;
+    color: #267A3E;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.login-button:hover {
+    background: #267A3E;
+    color: white;
+}
+
+.screen {
+    text-align: center;
+    padding: 40px 20px;
+    animation: fadeIn 1s ease;
+}
+
+.game-title {
+    font-size: 32px;
+    color: #267A3E;
+    margin-bottom: 20px;
+    animation: slideInDown 1s ease;
+}
+
+.challenge-box {
+    background: #fff;
+    border: 2px dashed #267A3E;
+    padding: 20px;
+    margin: 0 auto 30px;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    animation: popIn 0.8s ease forwards;
+}
+
+.challenge-box h3 {
+    color: #267A3E;
+    margin-bottom: 10px;
+}
+
+.challenge-box p {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    color: #444;
+}
+
+.code-display {
+    background: #000;
+    color: #00FF00;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 8px;
+    font-family: 'Courier New', Courier, monospace;
+    min-height: 100px;
+    white-space: pre-wrap;
+    text-align: left;
+    overflow-wrap: break-word;
+    animation: none;
+}
+
+.enhanced-game-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.enhanced-block {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    width: 40%;
+    min-width: 280px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.enhanced-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+input {
+    padding: 10px;
+    width: 80%;
+    margin: 10px;
+    border: 2px solid #267A3E;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.scoreboard {
+    width: 50%;
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.scoreboard table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.scoreboard th, .scoreboard td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.scoreboard th {
+    background: #267A3E;
+    color: white;
+    font-size: 18px;
+}
+
+.scoreboard td {
+    font-size: 16px;
+    color: #333;
+}
+
+@keyframes typing {
+    0% { opacity: 0.1; }
+    50% { opacity: 1; }
+    100% { opacity: 0.1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInDown {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes popIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@media screen and (max-width: 945px) {
+    .enhanced-game-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .enhanced-block {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+    .challenge-box {
+        width: 90%;
+    }
+}
+
+.difficulty-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.difficulty {
+    padding: 14px 28px;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(135deg, #267A3E, #3cb371);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.difficulty::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 10%, transparent 60%);
+    animation: shine 2s infinite linear;
+    z-index: 0;
+}
+
+.difficulty:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.difficulty:active {
+    transform: scale(0.95);
+}
+
+.difficulty.easy {
+    background: linear-gradient(135deg, #4CAF50, #81C784);
+}
+
+.difficulty.medium {
+    background: linear-gradient(135deg, #FFA000, #FFB74D);
+}
+
+.difficulty.hard {
+    background: linear-gradient(135deg, #E53935, #EF5350);
+}
+
+@keyframes shine {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Victory/Loss Screen */
+.victory-loss-screen {
+    background-color: #267A3E;
+    color: white;
+    text-align: center;
+    padding: 50px;
+    display: none;
+    animation: fadeIn 1s ease;
+}
+
+.victory-loss-screen h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.victory-loss-screen p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.victory-loss-screen .question-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.victory-loss-screen .question-list li {
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.victory-loss-screen .question-list li span {
+    font-weight: bold;
+}
+
+.victory-loss-screen .btn-play-again {
+    padding: 15px 30px;
+    background: #fff;
+    color: #267A3E;
+    border: none;
+    border-radius: 20px;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 30px;
+}
+
+.victory-loss-screen .btn-play-again:hover {
+    background: #267A3E;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Keyframe for fade-in effect */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(135deg, #ACD0B7, #88B394, #267A3E);
+    min-height: 100vh;
+  }
+  
+  #main-section {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  
+  .card {
+    border-radius: 12px;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  p {
+    font-size: 1rem;
+  }
+  
+  
+  .container {
+    display: flex;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .left {
+    flex: 1;
+    padding: 40px;
+    background: white;
+  }
+  
+  .left h2 {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+  
+  .left p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .right {
+    flex: 1;
+    background: #fdfdfd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+  }
+  
+  .form-box {
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-box h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+  
+  input, select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  
+  .checkbox {
+    font-size: 12px;
+    margin-bottom: 20px;
+    color: #555;
+  }
+  
+  button {
+    padding: 12px;
+    background-color: #7a6ff0;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #6c60e6;
+  }
+  
+  .signin {
+    font-size: 12px;
+    margin-top: 15px;
+    text-align: center;
+  }
+  
+  .signin a {
+    color: #6c60e6;
+    text-decoration: none;
+  }
+
+  .green-button {
+    background-color: #267A3E;
+  }
+  
+  .green-button:hover {
+    background-color: #1e5f32;
+  }
+  

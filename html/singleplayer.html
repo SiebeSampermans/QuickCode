@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Checker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase-config.js" defer></script>
+    <script src="../js/supabaseClient.js" defer></script>
+    <script src="../js/auth.js" defer></script>
+    <script src="../js/singleplayer-auth.js" defer></script>
+    <script src="../js/script.js" defer></script>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <a href="/">
+            <img src="../images/Logo.png" alt="Title Image">
+        </a>
+    </div>
+    <div class="auth-buttons" data-auth-links>
+        <a href="/login" class="auth-link">Login</a>
+        <a href="/register" class="auth-link">Register</a>
+    </div>
+</header>
+
+<main>
+    <section id="difficulty-screen" class="screen">
+        <div class="difficulty-selection">
+            <h2>Difficulty</h2>
+            <div class="difficulty-buttons">
+                <button class="difficulty easy" onclick="selectDifficulty('easy')">Easy</button>
+                <button class="difficulty medium" onclick="selectDifficulty('medium')">Medium</button>
+                <button class="difficulty hard" onclick="selectDifficulty('hard')">Hard</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="countdown-screen" class="screen">
+        <h1>De game begint in...</h1>
+        <p id="countdown-timer">3</p>
+    </section>
+
+    <section id="game-screen" class="screen">
+        <h1 class="game-title">CodeFix Challenge</h1>
+        <div class="challenge-box">
+            <h3>Expected Output:</h3>
+            <p id="expected-output"></p>
+            <h3>Hint:</h3>
+            <p id="hint"></p>
+            <div class="code-display" id="code-display"></div>
+        </div>
+        <div class="game-container enhanced-game-container">
+            <div class="player-side enhanced-block">
+                <h2>You</h2>
+                <input type="text" id="user-input" placeholder="Type your answer...">
+                <p>Score: <span id="player-score">0</span></p>
+            </div>
+            <div class="ai-side enhanced-block">
+                <h2>AI</h2>
+                <input type="text" id="ai-input" disabled>
+                <p>Score: <span id="ai-score">0</span></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="scoreboard">
+        <h2>Scoreboard</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Mode</th>
+                <th>Info</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Guest</td>
+                <td>Guest scores are not saved.</td>
+            </tr>
+            <tr>
+                <td>Logged in</td>
+                <td>Every correct answer adds 1 point to your Supabase profile score.</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <a href="#terms">Terms of Service</a>
+        <a href="#privacy">Privacy Policy</a>
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank" rel="noreferrer"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noreferrer"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noreferrer"><i class="fab fa-instagram"></i></a>
+            <a href="https://discord.com" target="_blank" rel="noreferrer"><i class="fab fa-discord"></i></a>
+        </div>
+    </div>
+    <p>&copy; 2026 QuickCode. All rights reserved.</p>
+</footer>
+</body>
+</html>

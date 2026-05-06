@@ -1,0 +1,142 @@
+[
+    {
+        "code": "x = 0\n___ x < 5:\n    print(x)\n    x += 1",
+        "missing": "while",
+        "hint": "Hint: Loop that continues while a condition is true.",
+        "expectedOutput": "Prints 0 through 4",
+        "hashedSolution": "07a8750738828ffd36a9bbfc198cf5d3bfd93e9f86b0e16e5aedeef8426804cf"
+    },
+    {
+        "code": "for i in ___(5):\n    print(i)",
+        "missing": "range",
+        "hint": "Hint: Generates a sequence of numbers.",
+        "expectedOutput": "Prints 0 through 4",
+        "hashedSolution": "2269c0be009b610cfdbb8cfe9253ad37cf95062fb3f5a7560268ff259ea9f087"
+    },
+    {
+        "code": "x = 10\nif x ___ 5:\n    print('Greater than 5')",
+        "missing": ">",
+        "hint": "Hint: Comparison operator for greater than.",
+        "expectedOutput": "Prints 'Greater than 5'",
+        "hashedSolution": "62b67e1f685b7fef51102005dddd27774be3fee38c42965c53aab035d0b6b221"
+    },
+    {
+        "code": "x = 3\nif x ___ 3:\n    print('Equal!')",
+        "missing": "==",
+        "hint": "Hint: Use equality operator in if-statement.",
+        "expectedOutput": "Prints 'Equal!'",
+        "hashedSolution": "f16474a9900a44186e87098f5fcb153a1fab2e401e1a6db587168b204761b276"
+    },
+    {
+        "code": "x = 5\nif x > 0:\n    print('Positive')\n___:\n    print('Non-positive')",
+        "missing": "else",
+        "hint": "Hint: Used when the if-condition is false.",
+        "expectedOutput": "Prints 'Positive'",
+        "hashedSolution": "7dd530c4d36da47cd33396718ef1fa1e8c0f7d91ee551d7fdc1c73aa65edb454"
+    },
+    {
+        "code": "x = 0\n___ x < 3:\n    print('Hello')\n    x += 1",
+        "missing": "while",
+        "hint": "Hint: Repeat while a condition is true.",
+        "expectedOutput": "Prints 'Hello' 3 times",
+        "hashedSolution": "07a8750738828ffd36a9bbfc198cf5d3bfd93e9f86b0e16e5aedeef8426804cf"
+    },
+    {
+        "code": "names = ['Alice', 'Bob', 'Eve']\nfor name ___ names:\n    print(name)",
+        "missing": "in",
+        "hint": "Hint: Used to iterate through elements.",
+        "expectedOutput": "Prints each name",
+        "hashedSolution": "582967534d0f909d196b97f9e6921342777aea87b46fa52df165389db1fb8ccf"
+    },
+    {
+        "code": "x = 7\nif x % 2 ___ 0:\n    print('Even')",
+        "missing": "==",
+        "hint": "Hint: Check for even number.",
+        "expectedOutput": "Only prints if x is even",
+        "hashedSolution": "f16474a9900a44186e87098f5fcb153a1fab2e401e1a6db587168b204761b276"
+    },
+    {
+        "code": "value = 10\nif value < 5:\n    print('Low')\nelif value < 15:\n    print('Medium')\n___:\n    print('High')",
+        "missing": "else",
+        "hint": "Hint: Final fallback block in if-elif chain.",
+        "expectedOutput": "Prints 'Medium'",
+        "hashedSolution": "7dd530c4d36da47cd33396718ef1fa1e8c0f7d91ee551d7fdc1c73aa65edb454"
+    },
+    {
+        "code": "command = 'start'\n___ command:\n    case 'start':\n        print('Starting')\n    case 'stop':\n        print('Stopping')",
+        "missing": "match",
+        "hint": "Hint: Python 3.10+ keyword for pattern matching.",
+        "expectedOutput": "Prints 'Starting'",
+        "hashedSolution": "4945a70fa7f9c13fe1931a3372ac5798140d42eba74d0dd805a4a216ed3a8142"
+    },
+    {
+        "code": "for i in range(3):\n    ___ i == 1:\n        print('Middle')",
+        "missing": "if",
+        "hint": "Hint: Conditional check inside a loop.",
+        "expectedOutput": "Prints 'Middle' when i is 1",
+        "hashedSolution": "935f68319d4f227e02bfd54a0ddf85b8a242e42a4277aa5ef5eaab691710924e"
+    },
+    {
+        "code": "x = 4\nif x ___ 2:\n    print('Divisible by 2')",
+        "missing": "% 2 == 0",
+        "hint": "Hint: Check if divisible by 2.",
+        "expectedOutput": "True if x is even",
+        "hashedSolution": "4e5bb0708b4ea5d70541226b91ffe055e89c3223302cfa49473c3ea10061d379"
+    },
+    {
+        "code": "i = 0\nwhile True:\n    if i == 3:\n        ___\n    print(i)\n    i += 1",
+        "missing": "break",
+        "hint": "Hint: Exit the loop early.",
+        "expectedOutput": "Prints 0 to 2",
+        "hashedSolution": "14ebe56a5008e7c251101e9e1fdbe281ab0a82bd6fa00a5cef746b9ee0dd31d1"
+    },
+    {
+        "code": "x = 10\nif x > 5 and x ___ 15:\n    print('In range')",
+        "missing": "<=",
+        "hint": "Hint: x should be less than or equal to 15.",
+        "expectedOutput": "Prints 'In range'",
+        "hashedSolution": "b60080dc8b8982d2a2bff6f8f3715c1939614dc553cd223ef21832b88c815866"
+    },
+    {
+        "code": "nums = [1, 2, 3, 4]\nfor n in nums:\n    if n % 2 == 0:\n        ___\n    print(n)",
+        "missing": "continue",
+        "hint": "Hint: Skip even numbers.",
+        "expectedOutput": "Prints 1 and 3",
+        "hashedSolution": "e256ee8e7aff6957a781d8328f0f68e26996564c81fa458da59fbca2305138ad"
+    },
+    {
+        "code": "status = 'ok'\nmatch status:\n    ___ 'ok':\n        print('All good')",
+        "missing": "case",
+        "hint": "Hint: Used inside match to check values.",
+        "expectedOutput": "Prints 'All good'",
+        "hashedSolution": "bbfcd4160a1e8674dac62292ae48be4785262ad7078f9ec11b74a254ce70fa06"
+    },
+    {
+        "code": "i = 0\nwhile i < 3:\n    print(i)\n    i ___ 1",
+        "missing": "+=",
+        "hint": "Hint: Increment by 1.",
+        "expectedOutput": "Prints 0 to 2",
+        "hashedSolution": "6254c28f7a6304931425ed7d57780e8b39a9f8ef7d0a63f9853eec9f5dd040d5"
+    },
+    {
+        "code": "x = 7\nif x % 2 != 0:\n    print('Odd')\n___:\n    print('Even')",
+        "missing": "else",
+        "hint": "Hint: Runs when if condition is false.",
+        "expectedOutput": "Prints 'Odd'",
+        "hashedSolution": "7dd530c4d36da47cd33396718ef1fa1e8c0f7d91ee551d7fdc1c73aa65edb454"
+    },
+    {
+        "code": "score = 75\nif score >= 90:\n    grade = 'A'\nelif score >= 80:\n    grade = 'B'\n___ score >= 70:\n    grade = 'C'",
+        "missing": "elif",
+        "hint": "Hint: Use to add another condition in if chain.",
+        "expectedOutput": "Assigns 'C'",
+        "hashedSolution": "d5fdb221055ea62b50ae39ea2305454218ff12d8527a841c27c9d07c82aa5cca"
+    },
+    {
+        "code": "x = 5\nif x ___ 10:\n    print('Less than 10')",
+        "missing": "<",
+        "hint": "Hint: Comparison operator.",
+        "expectedOutput": "Prints 'Less than 10'",
+        "hashedSolution": "dabd3aff769f07eb2965401eb029974ebba3407afd02b26ddb564ea5f8efae72"
+    }
+]

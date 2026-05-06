@@ -1,0 +1,10 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/", "destination": "/html/index.html" },
+    { "source": "/login", "destination": "/html/login.html" },
+    { "source": "/register", "destination": "/html/register.html" },
+    { "source": "/singleplayer", "destination": "/html/singleplayer.html" },
+    { "source": "/multiplayer", "destination": "/html/multiplayer.html" }
+  ]
+}
