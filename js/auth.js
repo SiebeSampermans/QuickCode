@@ -1,6 +1,9 @@
-const supabaseClient = window.quickCodeSupabase;
+async function getSupabaseClient() {
+    return window.quickCodeSupabaseReady;
+}
 
 async function getCurrentUser() {
+    const supabaseClient = await getSupabaseClient();
     const { data, error } = await supabaseClient.auth.getUser();
 
     if (error) {
@@ -12,6 +15,7 @@ async function getCurrentUser() {
 }
 
 async function getCurrentProfile() {
+    const supabaseClient = await getSupabaseClient();
     const user = await getCurrentUser();
 
     if (!user) {
@@ -33,6 +37,7 @@ async function getCurrentProfile() {
 }
 
 async function updateAuthUi() {
+    const supabaseClient = await getSupabaseClient();
     const user = await getCurrentUser();
     const authContainer = document.querySelector("[data-auth-links]");
 
@@ -63,8 +68,8 @@ async function updateAuthUi() {
 }
 
 window.quickCodeAuth = {
+    getSupabaseClient,
     getCurrentUser,
     getCurrentProfile,
-    updateAuthUi,
-    supabaseClient
+    updateAuthUi
 };

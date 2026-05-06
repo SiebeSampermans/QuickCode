@@ -8,6 +8,7 @@ async function loadCurrentPlayerName() {
 }
 
 async function updatePlayerScore(pointsToAdd = 1) {
+    const supabaseClient = await window.quickCodeAuth.getSupabaseClient();
     const profile = await window.quickCodeAuth.getCurrentProfile();
 
     if (!profile) {
@@ -16,7 +17,7 @@ async function updatePlayerScore(pointsToAdd = 1) {
 
     const nextScore = (profile.score || 0) + pointsToAdd;
 
-    const { error } = await window.quickCodeAuth.supabaseClient
+    const { error } = await supabaseClient
         .from("profiles")
         .update({ score: nextScore })
         .eq("id", profile.id);

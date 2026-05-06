@@ -1,19 +1,22 @@
-function getSupabaseConfig() {
-    const url = window.QUICKCODE_SUPABASE_URL;
-    const anonKey = window.QUICKCODE_SUPABASE_ANON_KEY;
+async function loadSupabaseConfig() {
+    const response = await fetch("/api/supabase-config");
 
-    if (!url || !anonKey) {
-        throw new Error(
-            "Supabase config ontbreekt. Maak js/supabase-config.js op basis van js/supabase-config.example.js."
-        );
+    if (!response.ok) {
+        throw new Error("Supabase config kon niet geladen worden vanaf Vercel.");
     }
 
-    return { url, anonKey };
+    const data = await response.json();
+
+    if (!data.url || !data.anonKey) {
+        throw new Error("Supabase config is onvolledig.");
+    }
+
+    return data;
 }
 
-function createSupabaseBrowserClient() {
-    const { url, anonKey } = getSupabaseConfig();
+async function createSupabaseBrowserClient() {
+    const { url, anonKey } = await loadSupabaseConfig();
     return window.supabase.createClient(url, anonKey);
 }
 
-window.quickCodeSupabase = createSupabaseBrowserClient();
+window.quickCodeSupabaseReady = createSupabaseBrowserClient();

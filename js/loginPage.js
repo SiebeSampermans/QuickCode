@@ -1,5 +1,6 @@
 async function handleLoginFormSubmit(event) {
     event.preventDefault();
+    const supabaseClient = await window.quickCodeAuth.getSupabaseClient();
 
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value;
@@ -7,7 +8,7 @@ async function handleLoginFormSubmit(event) {
 
     errorBox.textContent = "";
 
-    const { error } = await window.quickCodeAuth.supabaseClient.auth.signInWithPassword({
+    const { error } = await supabaseClient.auth.signInWithPassword({
         email,
         password
     });

@@ -1,5 +1,6 @@
 async function createProfileForUser(userId, username) {
-    const { error } = await window.quickCodeAuth.supabaseClient
+    const supabaseClient = await window.quickCodeAuth.getSupabaseClient();
+    const { error } = await supabaseClient
         .from("profiles")
         .insert({
             id: userId,
@@ -12,6 +13,7 @@ async function createProfileForUser(userId, username) {
 
 async function handleRegisterFormSubmit(event) {
     event.preventDefault();
+    const supabaseClient = await window.quickCodeAuth.getSupabaseClient();
 
     const username = document.getElementById("username").value.trim();
     const email = document.getElementById("email").value.trim();
@@ -20,7 +22,7 @@ async function handleRegisterFormSubmit(event) {
 
     messageBox.textContent = "";
 
-    const { data, error } = await window.quickCodeAuth.supabaseClient.auth.signUp({
+    const { data, error } = await supabaseClient.auth.signUp({
         email,
         password,
         options: {

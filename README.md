@@ -6,9 +6,10 @@ QuickCode draait nu richting een `Vercel + Supabase` setup in plaats van `PHP + 
 
 - `html/index.html` laadt het leaderboard uit Supabase
 - `html/login.html` gebruikt Supabase Auth
-- `html/register.html` gebruikt Supabase Auth + maakt een `profiles` record aan
+- `html/register.html` gebruikt Supabase Auth en maakt een `profiles` record aan
 - `html/singleplayer.html` kan je score opslaan in Supabase
 - `vercel.json` routeert nette URLs zoals `/login` en `/singleplayer`
+- `api/supabase-config.js` leest je Vercel environment variables uit
 
 De oude PHP-bestanden staan nog in de repo als legacy referentie, maar zijn niet geschikt voor een gewone Vercel static deploy.
 
@@ -20,7 +21,7 @@ Maak een nieuw project aan in Supabase.
 
 ### 2. Voer de SQL uit
 
-Open de SQL editor in Supabase en voer [supabase/schema.sql](/c:/Users/siebe/OneDrive - Thomas More/Integration Skills/Project/QuickCode/supabase/schema.sql:1) uit.
+Open de SQL editor in Supabase en voer `supabase/schema.sql` uit.
 
 Dit maakt een `profiles` tabel met:
 
@@ -35,7 +36,7 @@ en zet Row Level Security policies klaar.
 
 Gebruik Supabase Auth met e-mail en wachtwoord.
 
-Volgens de officiële Supabase docs werken hiervoor client-side methodes zoals:
+Client-side gebruikt deze app:
 
 - `signUp()`
 - `signInWithPassword()`
@@ -48,28 +49,29 @@ Bronnen:
 - https://supabase.com/docs/reference/javascript/installing
 - https://supabase.com/docs/guides/database/postgres/row-level-security
 
-### 4. Maak je lokale configbestand
+### 4. Zet je Vercel environment variables
 
-Kopieer:
+Voeg in Vercel deze environment variables toe:
 
-- `js/supabase-config.example.js`
+- `QUICKCODE_SUPABASE_URL`
+- `QUICKCODE_SUPABASE_ANON_KEY`
 
-naar:
+Voorbeeld:
 
-- `js/supabase-config.js`
+- `QUICKCODE_SUPABASE_URL=https://your-project-id.supabase.co`
+- `QUICKCODE_SUPABASE_ANON_KEY=your-publishable-anon-key`
 
-en vul in:
+De site leest die waarden via `api/supabase-config.js`.
 
-```js
-window.QUICKCODE_SUPABASE_URL = "https://your-project-id.supabase.co";
-window.QUICKCODE_SUPABASE_ANON_KEY = "your-publishable-anon-key";
-```
+Let op:
 
-`js/supabase-config.js` staat in `.gitignore` zodat je je echte key niet per ongeluk commit. Let op: de Supabase publishable/anon key is bedoeld voor client-side gebruik; beveiliging hoort in je RLS policies te zitten.
+- gebruik hier alleen je Supabase publishable/anon key
+- gebruik nooit je secret key in de browser
+- beveiliging hoort in je RLS policies te zitten
 
 ## Vercel deploy
 
-Volgens de officiële Vercel docs gebruik je voor databases op Vercel meestal Marketplace-integraties zoals Supabase, waarbij credentials als environment variables kunnen worden toegevoegd in framework-projecten. In deze repo gebruiken we voorlopig een eenvoudige client-side configfile voor de statische site.
+Volgens de officiele Vercel docs gebruik je voor databases op Vercel meestal Marketplace-integraties zoals Supabase, waarbij credentials als environment variables kunnen worden toegevoegd. In deze repo worden die variables uitgelezen via een kleine Vercel API route.
 
 Bronnen:
 
@@ -80,8 +82,8 @@ Bronnen:
 
 1. Push deze repo naar GitHub
 2. Import de repo in Vercel
-3. Zorg dat `js/supabase-config.js` aanwezig is in je project vóór je deployt
-4. Deploy
+3. Voeg in Vercel `QUICKCODE_SUPABASE_URL` en `QUICKCODE_SUPABASE_ANON_KEY` toe
+4. Redeploy
 
 ## Belangrijk
 

@@ -10,6 +10,7 @@ function getRankName(score) {
 
 async function renderHomepage() {
     await window.quickCodeAuth.updateAuthUi();
+    const supabaseClient = await window.quickCodeAuth.getSupabaseClient();
 
     const profile = await window.quickCodeAuth.getCurrentProfile();
     if (welcomeText) {
@@ -18,7 +19,7 @@ async function renderHomepage() {
             : "Log in om je score op te slaan en op het leaderboard te komen.";
     }
 
-    const { data, error } = await window.quickCodeAuth.supabaseClient
+    const { data, error } = await supabaseClient
         .from("profiles")
         .select("username, score")
         .order("score", { ascending: false })
